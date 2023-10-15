@@ -1,6 +1,9 @@
 import express from "express";
 import { Response } from "express";
+import { PrismaClient } from "@prisma/client";
 
+// @ts-ignore
+const prisma = new PrismaClient();
 const app = express();
 const PORT = 4000;
 
@@ -12,7 +15,7 @@ app.get("/", (_, res: Response) => {
   res.send("Hey this is my API running 🥳");
 });
 
-app.get("/about", (_, res: Response) => {
+app.get("/digits", (_, res: Response) => {
   res.send("This is my about route..... ");
 });
 
